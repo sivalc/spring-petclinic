@@ -10,5 +10,5 @@ RUN mvn install
 
 FROM openjdk:8-jre-alpine
 WORKDIR /app
-COPY --from=builder /app/target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar /app 
-CMD ["java -jar spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar"]
+COPY --from=builder /app/target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar .
+CMD ["java", "-jar",  "spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar"]
